@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="vi">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ôn từ vựng HSK 4 · Bài 15</title>
+<style>
+:root{color-scheme:light;--ink:#182d31;--teal:#125b54;--soft:#e5f3ed;--line:#d6e4de}
+*{box-sizing:border-box}
+body{margin:0;background:#f4f8f5;color:var(--ink);font:16px/1.55 system-ui,sans-serif}
+main{max-width:920px;margin:auto;padding:24px 16px 56px}
+header{background:#12463f;color:#fff;padding:clamp(22px,5vw,48px);border-radius:26px}
+header p{margin:0;color:#d1f2e4}
+h1{font-size:clamp(27px,5vw,46px);line-height:1.12;margin:12px 0}h2{margin:0 0 8px}
+nav,.actions{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}
+button,select{font:inherit;color:inherit;max-width:100%;min-height:44px;border:1px solid var(--line);border-radius:12px;background:#fff;padding:8px 14px}
+button{cursor:pointer;font-weight:650}
+button.primary,nav button[aria-pressed=true]{background:var(--teal);color:#fff;border-color:var(--teal)}
+button:disabled{opacity:.5;cursor:default}
+:focus-visible{outline:3px solid #b15016;outline-offset:3px}
+section{padding:clamp(15px,4vw,30px);background:#fff;border:1px solid var(--line);border-radius:22px}
+table{width:100%;border-collapse:collapse;margin:8px 0 22px;table-layout:fixed}
+th,td{text-align:left;vertical-align:middle;border-bottom:1px solid var(--line);padding:9px 5px;overflow-wrap:anywhere}
+th:first-child{width:25%}th:nth-child(2){width:29%}
+td[lang]{font-size:clamp(17px,3vw,23px);font-weight:700}
+caption{text-align:left;font-weight:700;margin:10px 0 4px;color:var(--teal)}
+.card{display:grid;align-content:center;justify-items:center;gap:8px;width:100%;min-height:235px;margin:14px 0;background:var(--soft);border:2px solid #b4d8ca}
+.card strong{font-size:clamp(34px,7vw,60px)}
+.card small{color:#325c55}
+.question{padding:14px 0;border-bottom:1px solid var(--line)}
+.sentence{font-size:clamp(20px,3vw,26px);display:block;margin-bottom:8px}
+.feedback{display:block;margin-top:4px;font-weight:650}
+.good{color:#176044}.bad{color:#a12824}
+#score{font-weight:750}
+[hidden]{display:none!important}
+
+:root{--ink:#272125;--teal:#9b2429;--soft:#fff9f5;--line:#e7d8d6}
+body{background:#f8f5f3}
+main{max-width:1200px;padding-top:0}
+header{margin-inline:calc((100% - 100vw)/2);border-radius:0;padding:23px 16px;background:linear-gradient(110deg,#410e16,#821c22)}
+.header-inner{max-width:1168px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
+h1{font-size:clamp(19px,3vw,31px);margin:0 0 5px}
+header p{color:#f5d6d4;font-size:13px}
+#points{font-weight:700;flex-shrink:0}
+nav{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+nav button{min-height:50px}
+section{border-radius:18px}
+#cards{padding:0;border:0;background:transparent}
+.card-meta{display:flex;justify-content:space-between;gap:10px;margin-top:18px;color:#625055}
+progress{width:100%;height:9px;display:block;margin-top:8px;accent-color:var(--teal)}
+.card{min-height:clamp(230px,46vh,440px);background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:0 8px 26px #52151b0a}
+.card strong{font-size:clamp(42px,8vw,96px)}
+.card small{color:#72565a}
+#back{font-size:clamp(17px,3vw,25px);color:#842227}
+#cards .actions button{flex:1 1 130px}
+#cards #review-card{flex-grow:2}
+.grammar-block{margin:16px 0;padding:14px 16px;background:#fffaf8;border:1px solid var(--line);border-radius:12px}
+.grammar-block h3,.grammar-block p{margin:4px 0 8px}
+.example{font-size:21px;color:#8b2428}
+input{font:inherit;min-height:44px;border:1px solid var(--line);border-radius:10px;padding:8px 12px;max-width:100%}
+@media(max-width:650px){nav{grid-template-columns:repeat(3,minmax(0,1fr))}nav button{padding-inline:4px}section{padding:14px}}
+</style>
+<main>
+<header><div class="header-inner"><div><h1>HSK 4 · Bài 15 · <span lang="zh-Hans">教育孩子的艺术</span></h1><p>TIẾNG TRUNG NHẬT MINH</p></div><output id="points">0 điểm</output></div></header>
+<nav aria-label="Các phần ôn tập">
+<button type="button" data-view="cards" aria-pressed="false">Học từ</button>
+<button type="button" data-view="practice" aria-pressed="false">Trắc nghiệm</button>
+<button type="button" data-view="typing" aria-pressed="false">Gõ từ</button>
+<button type="button" data-view="grammar" aria-pressed="false">Ngữ pháp</button>
+<button type="button" data-view="submission" aria-pressed="false">Nộp bài</button>
+<button type="button" data-view="study" aria-pressed="true">Danh sách</button>
+</nav>
+<section id="study" aria-labelledby="study-title">
+<h2 id="study-title" tabindex="-1">Danh sách từ vựng</h2>
+<p>Đọc chữ Hán, pinyin và nghĩa tiếng Việt trước khi luyện tập.</p>
+<div id="tables"></div>
+<button type="button" class="primary" data-view="cards">Bắt đầu ôn bằng thẻ lật</button>
+</section>
+<section id="cards" aria-labelledby="cards-title" hidden>
+<h2 id="cards-title" tabindex="-1">Thẻ lật</h2>
+<label for="card-group">Bộ thẻ</label>
+<select id="card-group"><option value="0">31 từ bài học</option><option value="1">16 từ mở rộng · Văn hóa</option><option value="2">Tất cả 47 từ</option><option value="3" hidden>Từ đã trả lời sai</option></select>
+<div class="card-meta"><span id="position" aria-live="polite"></span><span>Chạm thẻ để lật</span></div><progress id="card-progress" aria-label="Vị trí trong bộ thẻ"></progress>
+<button type="button" class="card" id="flip" aria-pressed="false">
+<strong id="hanzi" lang="zh-Hans"></strong><span id="back" hidden></span><small id="card-hint">Chạm để xem pinyin và nghĩa</small>
+</button>
+<div class="actions">
+<button type="button" id="prev">← Thẻ trước</button><button type="button" id="next">Thẻ sau →</button><button type="button" id="shuffle">Xáo thẻ</button>
+<button type="button" class="primary" id="review-card">Ôn từ hay sai</button>
+</div><p id="review-status" role="status"></p>
+</section>
+<section id="practice" aria-labelledby="practice-title" hidden>
+<h2 id="practice-title" tabindex="-1">Điền từ vào chỗ trống</h2>
+<p>Chọn một từ cho mỗi câu. Bấm «Chấm điểm» để xem kết quả của nhóm đang luyện.</p>
+<label for="quiz-group">Nhóm câu</label> <select id="quiz-group"></select>
+<form id="quiz">
+<div id="questions"></div>
+<div class="actions"><button class="primary" type="submit">Chấm điểm</button><button type="button" id="retry">Làm lại nhóm này</button></div>
+<p id="score" role="status"></p>
+</form>
+</section>
+<section id="typing" hidden aria-labelledby="typing-title">
+<h2 id="typing-title" tabindex="-1">Gõ từ</h2><p>Nhìn nghĩa tiếng Việt và gõ chữ Hán tương ứng.</p>
+<label for="typing-group">Nhóm câu</label> <select id="typing-group"></select>
+<form id="typing-form"><div id="typing-questions"></div><div class="actions"><button class="primary">Kiểm tra nhóm này</button></div><p id="typing-score" role="status"></p></form>
+</section>
+<section id="grammar" hidden aria-labelledby="grammar-title">
+<h2 id="grammar-title" tabindex="-1">Ôn tập ngữ pháp</h2><p>Đọc cách dùng và ví dụ, sau đó chọn đáp án phù hợp.</p>
+<form id="grammar-form"><div id="grammar-content"></div><div class="actions"><button class="primary">Chấm phần ngữ pháp</button></div><p id="grammar-score" role="status"></p></form>
+</section>
+<section id="submission" hidden aria-labelledby="submission-title">
+<h2 id="submission-title" tabindex="-1">Nộp bài</h2>
+<p>Điểm tổng hợp tính trên 106 câu của ba phần. Câu bỏ trống được tính 0 điểm. Bạn có thể quay lại làm tiếp và chấm lại.</p>
+<button class="primary" id="submit-all" type="button">Nộp và xem điểm</button>
+<ul id="summary" aria-live="polite"></ul>
+<button id="review-errors" type="button" hidden>Ôn lại từ đã trả lời sai</button>
+</section>
+</main>
+<script id="vocab" type="application/json">[["弹钢琴", "tán gāngqín", "chơi đàn piano", "她每天练习＿，已经会弹三首曲子了。"], ["棒", "bàng", "giỏi, tuyệt vời", "你第一次参加比赛就得了第一名，真＿！"], ["孙子", "sūnzi", "cháu nội trai", "我儿子的儿子是我的＿。"], ["寒假", "hánjià", "kỳ nghỉ đông", "冬天放假时，我打算利用＿去滑雪。"], ["父亲", "fùqīn", "cha, bố", "＿常说：“我是你爸爸，有事可以跟我商量。”"], ["闹钟", "nàozhōng", "đồng hồ báo thức", "为了明天能早起，我睡前把＿设在六点。"], ["响", "xiǎng", "reo, vang lên", "下课铃一＿，孩子们就跑出了教室。"], ["醒", "xǐng", "tỉnh dậy, thức giấc", "她昨晚睡得很晚，今天早上九点才＿。"], ["赶", "gǎn", "vội, gấp rút", "离上课只有五分钟了，我得＿时间，不能慢慢走了。"], ["厕所", "cèsuǒ", "nhà vệ sinh", "请问，洗手间在哪儿？我想上＿。"], ["批评", "pīpíng", "phê bình", "他又没交作业，所以老师＿了他。"], ["管理", "guǎnlǐ", "quản lý", "我们要学会＿自己的时间，先做重要的事。"], ["打针", "dǎzhēn", "tiêm, chích", "孩子一看到护士拿着针，就知道要＿了。"], ["护士", "hùshi", "y tá, điều dưỡng", "医生开了药，让＿给病人打针。"], ["表扬", "biǎoyáng", "khen ngợi, biểu dương", "她主动帮助同学，老师在全班面前＿了她。"], ["怀疑", "huáiyí", "nghi ngờ", "他说自己去过那里，可连地址都不知道，我＿他没去过。"], ["故意", "gùyì", "cố ý, cố tình", "对不起，我不是＿把你的杯子打破的。"], ["敲", "qiāo", "gõ", "进办公室以前，请先＿门。"], ["整理", "zhěnglǐ", "sắp xếp, dọn dẹp", "书桌太乱了，你先＿一下，把书放回书架上。"], ["合适", "héshì", "phù hợp, vừa vặn", "这双鞋不大也不小，穿着很＿。"], ["骗", "piàn", "lừa, lừa gạt", "他用假消息＿了很多人。"], ["儿童", "értóng", "trẻ em", "这个游泳班只招收六到十二岁的＿。"], ["假", "jiǎ", "giả, không thật", "这张票是＿的，真的票上有日期。"], ["左右", "zuǒyòu", "khoảng, chừng", "从学校走到车站要十分钟＿。"], ["懒", "lǎn", "lười", "他太＿了，连自己的房间都不愿意打扫。"], ["笨", "bèn", "ngốc, kém nhanh trí", "一道题没做对，不代表你＿，再想想吧。"], ["粗心", "cūxīn", "cẩu thả, bất cẩn", "他会做这道题，只是太＿，把数字抄错了。"], ["骄傲", "jiāo’ào", "tự hào, kiêu ngạo", "你坚持练习，终于通过了考试，我们都为你感到＿。"], ["害羞", "hàixiū", "ngượng ngùng, thẹn thùng", "一见到陌生人，她就＿得脸红。"], ["弄", "nòng", "làm, khiến cho", "搬桌子的时候小心点儿，别把门＿坏了。"], ["千万", "qiānwàn", "nhất định, tuyệt đối (lời dặn)", "我再提醒你一次，＿别把密码告诉陌生人。"], ["孟子", "Mèngzǐ", "Mạnh Tử", "“孟母三迁”的故事讲的是＿和他的母亲。"], ["思想家", "sīxiǎngjiā", "nhà tư tưởng", "研究思想史时，我们读了这位＿关于社会和人生的著作。"], ["教育家", "jiàoyùjiā", "nhà giáo dục", "这位＿创办了许多学校，一生都在研究怎样教好孩子。"], ["儒家学派", "Rújiā xuépài", "trường phái Nho gia", "孔子是＿的创始人。"], ["代表人物", "dàibiǎo rénwù", "nhân vật tiêu biểu, đại diện", "谈到唐代诗歌，李白是其中一位＿。"], ["圣人", "shèngrén", "bậc thánh nhân", "古人把品德和智慧都极高的人称为＿。"], ["教育环境", "jiàoyù huánjìng", "môi trường giáo dục", "家长和学校可以一起努力，为孩子创造良好的＿。"], ["曾经", "céngjīng", "đã từng", "他＿在北京住过三年，现在已经搬回家乡了。"], ["模仿", "mófǎng", "bắt chước, mô phỏng", "孩子常常＿大人说话的语气和动作。"], ["成长", "chéngzhǎng", "trưởng thành, lớn lên", "父母的关心对孩子的＿很重要。"], ["坟墓", "fénmù", "ngôi mộ, phần mộ", "考古人员发现了一座古人的＿。"], ["办丧事", "bàn sāngshì", "tổ chức tang lễ", "老人去世以后，家人为他＿。"], ["市场", "shìchǎng", "chợ, thị trường", "妈妈每天早上都去附近的＿买菜。"], ["如今", "rújīn", "ngày nay, hiện nay", "这里以前只有几户人家，＿已经成了一座热闹的小城。"], ["陪读", "péidú", "đi cùng để hỗ trợ người thân học tập", "女儿去外地上学，妈妈也搬到学校附近＿。"], ["才德", "cáidé", "tài năng và đức hạnh", "老师说，做人要重视＿，既要有才能，也要有好的品德。"]]</script>
+<script type="application/json" id="grammar-data">[
+ ["想起来","Nhớ ra một việc hoặc một người. Dùng 没想起来 khi nói đã không nhớ ra.","我突然想起来，今天还要去银行。",[
+  ["看了这张老照片，我终于＿了，他是我小学时的同桌。",["想起来","站起来","走过去"],0],
+  ["刚才我没＿她的名字，现在记起来了。",["想起来","坐下去","看出来"],0]]],
+ ["弄","Trong khẩu ngữ, 弄 có thể thay cho một động từ khi hành động đã rõ. 弄 + bổ ngữ chỉ kết quả, như 弄脏 và 弄坏.","搬桌子时小心点儿，别把门弄坏了。",[
+  ["别把刚洗好的衣服＿脏了。",["弄","想","听"],0],
+  ["资料我已经＿好了，你可以直接打印。",["敲","醒","弄"],2]]],
+ ["千万","Dùng để dặn dò hoặc nhấn mạnh điều cần làm hay cần tránh. Thường gặp 千万别、千万不要、千万不能. 一定 còn dùng để nói về điều chắc chắn.","过马路时千万别看手机。",[
+  ["我再提醒你一次，＿别把密码告诉别人。",["左右","千万","突然"],1],
+  ["哪一句的“一定”表示推测？",["你一定要记得带护照。","你一定不能迟到。","灯亮着，他一定在家。"],2]]],
+ ["来 + động từ","Dùng trong khẩu ngữ để nhận làm hoặc giao cho ai làm một việc.","这件事我来处理，你先休息吧。",[
+  ["这箱书太重了，我＿帮你搬吧。",["把","来","被"],1],
+  ["哪一句的“来”表示由某人负责做事？",["明天你来我家吧。","这件事由小王来负责。","他是从北京来的。"],1]]],
+ ["Số lượng + 左右","Đặt sau số lượng hoặc mốc thời gian để chỉ con số ước chừng.","我们八点左右到。",[
+  ["从这儿走到车站要十五分钟＿。",["起来","以后","左右"],2],
+  ["哪一句表示到达的时间不太确定？",["我们八点整到。","我们八点左右到。","我们八点准时到。"],1]]],
+ ["Chữ 护 trong từ ghép","护 mang nghĩa bảo vệ hoặc chăm sóc. Ví dụ 保护 (bảo vệ), 护理 (chăm sóc), 护士 (điều dưỡng).","护士正在护理病人。",[
+  ["医生开了药，＿负责给病人打针。",["儿童","护士","父亲"],1],
+  ["我们应该＿环境，不乱扔垃圾。",["表扬","怀疑","保护"],2]]]
+]
+</script>
+<script>
+'use strict';
+const words = JSON.parse(document.querySelector('#vocab').textContent);
+const byId = id => document.getElementById(id);
+const wordSets = [words.slice(0,31), words.slice(31), words];
+function shuffled(items) {
+  const copy = [...items];
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+  return copy;
+}
+document.querySelectorAll('[data-view]').forEach(button => {
+  button.addEventListener('click', () => {
+    const view = button.dataset.view;
+    document.querySelectorAll('main section').forEach(section => section.hidden = section.id !== view);
+    document.querySelectorAll('nav button').forEach(tab => tab.setAttribute('aria-pressed', String(tab.dataset.view === view)));
+    byId(view + '-title').focus({preventScroll:true});
+    window.scrollTo(0, 0);
+  });
+});
+['31 từ bài học', '16 từ mở rộng · Văn hóa'].forEach((title, index) => {
+  const table = document.createElement('table');
+  table.innerHTML = '<caption></caption><thead><tr><th scope="col">Chữ Hán</th><th scope="col">Pinyin</th><th scope="col">Nghĩa tiếng Việt</th></tr></thead><tbody></tbody>';
+  table.caption.textContent = title;
+  wordSets[index].forEach(word => {
+    const row = table.tBodies[0].insertRow();
+    word.slice(0,3).forEach((value, column) => {
+      const cell = row.insertCell();
+      cell.textContent = value;
+      if (column === 0) cell.lang = 'zh-Hans';
+    });
+  });
+  byId('tables').append(table);
+});
+let deck = wordSets[0];
+let cardIndex = 0;
+function showCard(revealed = false) {
+  const [hanzi, pinyin, meaning] = deck[cardIndex];
+  byId('position').textContent = 'Thẻ ' + (cardIndex + 1) + ' / ' + deck.length;
+  byId('card-progress').max = deck.length;
+  byId('card-progress').value = cardIndex + 1;
+  byId('hanzi').textContent = hanzi;
+  byId('back').textContent = pinyin + ' · ' + meaning;
+  byId('back').hidden = !revealed;
+  byId('flip').setAttribute('aria-pressed', String(revealed));
+  byId('card-hint').textContent = revealed ? 'Chạm để úp thẻ' : 'Chạm để xem pinyin và nghĩa';
+  byId('prev').disabled = cardIndex === 0;
+  byId('next').disabled = cardIndex === deck.length - 1;
+}
+byId('flip').onclick = () => showCard(byId('back').hidden);
+byId('prev').onclick = () => { cardIndex--; showCard(); };
+byId('next').onclick = () => { cardIndex++; showCard(); };
+byId('card-group').onchange = () => { deck = wordSets[byId('card-group').value]; byId('review-status').textContent = ''; cardIndex = 0; showCard(); };
+byId('shuffle').onclick = () => { deck = shuffled(deck); cardIndex = 0; showCard(); };
+showCard();
+const groups = [[0,8],[8,16],[16,24],[24,31],[31,39],[39,47]].map(([start,end], index) => {
+  byId('quiz-group').add(new Option((index < 4 ? 'Bài học' : 'Văn hóa') + ' · Câu ' + (start + 1) + '–' + end, index));
+  return {start, words:words.slice(start,end), chosen:Array(end-start).fill(''), graded:false};
+});
+const activeGroup = () => groups[byId('quiz-group').value];
+function showQuiz() {
+  const group = activeGroup();
+  const bank = shuffled(group.words.map(word => word[0]));
+  byId('questions').replaceChildren();
+  byId('score').textContent = '';
+  group.words.forEach((word, index) => {
+    const question = document.createElement('div');
+    question.className = 'question';
+    const select = document.createElement('select');
+    select.id = 'answer-' + index;
+    const label = document.createElement('label');
+    label.className = 'sentence';
+    label.htmlFor = select.id;
+    const sentence = document.createElement('span');
+    sentence.lang = 'zh-Hans';
+    sentence.textContent = word[3].replace('＿','_____');
+    label.append((group.start + index + 1) + '. ',sentence);
+    select.add(new Option('Chọn từ…', ''));
+    bank.forEach(value => {
+      const option = new Option(value);
+      option.lang = 'zh-Hans';
+      select.add(option);
+    });
+    select.value = group.chosen[index];
+    const feedback = document.createElement('span');
+    feedback.className = 'feedback';
+    select.onchange = () => {
+      group.chosen[index] = select.value;
+      invalidateSubmission();
+      if (group.graded) {
+        group.graded = false;
+        byId('score').textContent = '';
+        byId('questions').querySelectorAll('.feedback').forEach(item => item.textContent = '');
+      }
+    };
+    question.append(label,select,feedback);
+    byId('questions').append(question);
+  });
+  if (group.graded) grade();
+}
+function grade() {
+  const group = activeGroup();
+  let correct = 0;
+  byId('questions').querySelectorAll('.feedback').forEach((feedback,index) => {
+    const answer = group.chosen[index];
+    const right = answer === group.words[index][0];
+    if (right) correct++;
+    feedback.className = 'feedback ' + (right ? 'good' : 'bad');
+    feedback.textContent = right ? '✓ Đúng' : answer ? 'Chưa đúng' : 'Chưa chọn từ';
+  });
+  group.graded = true;
+  const total = group.words.length;
+  const empty = group.chosen.filter(answer => !answer).length;
+  byId('score').textContent = 'Đúng ' + correct + '/' + total + ' câu · ' + Math.round(correct / total * 100) + '/100 điểm' + (empty ? ' · ' + empty + ' câu chưa làm' : '');
+}
+byId('quiz-group').onchange = showQuiz;
+byId('quiz').onsubmit = event => { event.preventDefault(); grade(); };
+byId('retry').onclick = () => {
+  const group = activeGroup();
+  group.chosen.fill('');
+  invalidateSubmission();
+  group.graded = false;
+  showQuiz();
+  byId('answer-0').focus();
+};
+showQuiz();
+const grammar = JSON.parse(byId('grammar-data').textContent);
+const grammarItems = [];
+const typingItems = [];
+function createQuestion(container, prompt, options) {
+  const row = document.createElement('div');
+  row.className = 'question';
+  const label = document.createElement('label');
+  label.className = 'sentence';
+  label.textContent = prompt;
+  const control = document.createElement(options ? 'select' : 'input');
+  control.id = container.id + '-' + container.children.length;
+  control.lang = 'zh-Hans';
+  label.htmlFor = control.id;
+  const feedback = document.createElement('span');
+  feedback.className = 'feedback';
+  if (options) {
+    control.add(new Option('Chọn đáp án…', ''));
+    shuffled(options).forEach((option) => control.add(new Option(option, option)));
+  } else {
+    control.placeholder = 'Gõ chữ Hán';
+    control.autocomplete = 'off';
+    control.spellcheck = false;
+  }
+  const item = {control, feedback, value:''};
+  row.append(label, control, feedback);
+  container.append(row);
+  return item;
+}
+grammar.forEach(([title, explanation, example, exercises]) => {
+  const block = document.createElement('article');
+  block.className = 'grammar-block';
+  const heading = document.createElement('h3');
+  heading.textContent = title;
+  const summary = document.createElement('p');
+  summary.textContent = explanation;
+  const sample = document.createElement('p');
+  sample.lang = 'zh-Hans';
+  sample.className = 'example';
+  sample.textContent = example;
+  const questions = document.createElement('div');
+  questions.id = 'grammar-' + grammarItems.length;
+  exercises.forEach(([prompt, options, key]) => {
+    grammarItems.push({...createQuestion(questions, prompt, options), answer:options[key]});
+    const item = grammarItems.at(-1);
+    item.control.oninput = () => {
+      item.value = item.control.value;
+      item.feedback.textContent = '';
+      byId('grammar-score').textContent = '';
+      invalidateSubmission();
+    };
+  });
+  block.append(heading, summary, sample, questions);
+  byId('grammar-content').append(block);
+});
+const normalize = value => value.normalize('NFKC').replace(/\s+/g, '');
+function tally(items, feedback = false) {
+  let right = 0, answered = 0;
+  items.forEach(item => {
+    const filled = Boolean(normalize(item.value));
+    const good = normalize(item.value) === normalize(item.answer);
+    answered += Number(filled);
+    right += Number(good);
+    if (feedback) {
+      item.feedback.className = 'feedback ' + (good ? 'good' : 'bad');
+      item.feedback.textContent = good ? '✓ Đúng' : filled ? 'Chưa đúng' : 'Chưa làm';
+    }
+  });
+  return {right, answered, total:items.length};
+}
+const typingGroups = groups.map((group, index) => {
+  byId('typing-group').add(new Option('Câu ' + (group.start + 1) + '–' + (group.start + group.words.length), index));
+  return group.words.map(word => ({answer:word[0], hint:word[2], value:''}));
+});
+function showTyping() {
+  const list = byId('typing-questions');
+  list.replaceChildren();
+  byId('typing-score').textContent = '';
+  const group = typingGroups[byId('typing-group').value];
+  typingItems.length = 0;
+  group.forEach(word => {
+    const item = createQuestion(list, word.hint);
+    item.control.value = word.value;
+    item.control.oninput = () => {
+      word.value = item.value = item.control.value;
+      item.feedback.textContent = '';
+      byId('typing-score').textContent = '';
+      invalidateSubmission();
+    };
+    Object.assign(item, {value:word.value, answer:word.answer});
+    typingItems.push(item);
+  });
+}
+byId('typing-group').onchange = showTyping;
+showTyping();
+function check(event, items, id) {
+  event.preventDefault();
+  const {right,total} = tally(items, true);
+  byId(id).textContent = 'Đúng ' + right + '/' + total + ' câu';
+}
+byId('typing-form').onsubmit = event => check(event, typingItems, 'typing-score');
+byId('grammar-form').onsubmit = event => check(event, grammarItems, 'grammar-score');
+function invalidateSubmission() {
+  byId('points').textContent = '0 điểm';
+  byId('summary').textContent = '';
+  byId('review-errors').hidden = true;
+}
+const quizItems = () => groups.flatMap(group => group.words.map((word,index) => ({answer:word[0], value:group.chosen[index]})));
+byId('submit-all').onclick = () => {
+  const parts = [['Trắc nghiệm',quizItems()], ['Gõ từ',typingGroups.flat()], ['Ngữ pháp',grammarItems]];
+  const counts = parts.map(([label,items]) => ({label,...tally(items)}));
+  const total = counts.reduce((sum,part) => sum + part.total, 0);
+  const right = counts.reduce((sum,part) => sum + part.right, 0);
+  const answered = counts.reduce((sum,part) => sum + part.answered, 0);
+  const points = Math.round(right / total * 100);
+  byId('points').textContent = points + '/100 điểm';
+  byId('summary').replaceChildren();
+  counts.forEach(part => {
+    const row = document.createElement('li');
+    row.textContent = part.label + ' — đúng ' + part.right + '/' + part.total + ', đã làm ' + part.answered + ' câu';
+    byId('summary').append(row);
+  });
+  const result = document.createElement('li');
+  result.textContent = 'Tổng điểm ' + points + '/100 · ' + (total - answered) + ' câu chưa làm';
+  byId('summary').append(result);
+  byId('review-errors').hidden = missedWords().length === 0;
+};
+function missedWords() {
+  const wrong = new Set([...quizItems(), ...typingGroups.flat()].filter(item => normalize(item.value) && normalize(item.value) !== normalize(item.answer)).map(item => item.answer));
+  return words.filter(word => wrong.has(word[0]));
+}
+function reviewMistakes() {
+  const missed = missedWords();
+  if (!missed.length) {
+    byId('review-status').textContent = 'Chưa có từ trả lời sai trong bài luyện.';
+    return;
+  }
+  deck = missed;
+  cardIndex = 0;
+  byId('card-group').value = '3';
+  showCard();
+  byId('review-status').textContent = 'Đang ôn lại ' + missed.length + ' từ đã trả lời sai.';
+  document.querySelector('nav [data-view=cards]').click();
+}
+byId('review-errors').onclick = reviewMistakes;
+byId('review-card').onclick = reviewMistakes;
+</script>
+</html>
